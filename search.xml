@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[题解 P1757【通天之分组背包】]]></title>
+    <url>%2F2018%2F11%2F07%2F%E9%A2%98%E8%A7%A3-P1757%E3%80%90%E9%80%9A%E5%A4%A9%E4%B9%8B%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85%E3%80%91%2F</url>
+    <content type="text"><![CDATA[这是一道分组背包的裸板子题啊qwq，今天小蒟蒻来给大家讲一下分组背包的简单使用方法（毕竟难的也不会啊TAT（逃 首先看一下题目 题目背景直达通天路·小A历险记第二篇 题目描述自01背包问世之后，小A对此深感兴趣。一天，小A去远游，却发现他的背包不同于01背包，他的物品大致可分为k组，每组中的物品相互冲突，现在，他想知道最大的利用价值是多少。 输入输出格式输入格式：两个数m,n，表示一共有n件物品，总重量为m 接下来n行，每行3个数ai,bi,ci，表示物品的重量，利用价值，所属组数 输出格式：一个数，最大的利用价值 输入输出样例输入样例#1： 复制45 310 10 110 5 150 400 2输出样例#1： 复制10说明1&lt;=m&lt;=1000 1&lt;=n&lt;=1000 组数t&lt;=100 首先我们用一个数组w[i]来保存每个物品的重量，c[i]表示每个物品的价值，定义二维数组a[p][0]表示第p组的物品有a[p][0]件，里面存储这个物品的序号为[i]，定义一个变量t来保存一共有多少组物品。 那么这个题的状态转移方程就变得非常简单啦，大致类似于01背包，注意控制循环变量的时候把组数放在外面（或许只有本蒟蒻犯了这种zz的错误QAQ 下面状态转移方程和循环变量就在代码里啦qwq 1234567891011121314151617181920212223242526#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;int w[10001],t,c[10001],v,f[10001],a[10001][1001],m,n,p;int main()&#123; scanf("%d%d",&amp;m,&amp;n); for(int i=1; i&lt;=n; i++) &#123; scanf("%d%d%d",&amp;w[i],&amp;c[i],&amp;p); a[p][++a[p][0]]=i; t=max(t,p); &#125; for(int k=1; k&lt;=t; k++)//控制组数 for(int j=m; j&gt;=0; j--)//容量 for(int i=1; i&lt;=a[k][0]; i++)//枚举 if(w[a[k][i]]&lt;=j)//先判断能不能放 f[j]=max(f[j],f[j-w[a[k][i]]]+c[a[k][i]]); printf("%d",f[m]);&#125;]]></content>
+      <categories>
+        <category>动态规划/背包</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【题解】 P1064 金明的预算方案]]></title>
     <url>%2F2018%2F11%2F07%2F%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91-P1064-%E9%87%91%E6%98%8E%E7%9A%84%E9%A2%84%E7%AE%97%E6%96%B9%E6%A1%88%2F</url>
     <content type="text"><![CDATA[~~（啊啊啊这个sd题目卡了我半天QAQ 我为什么可以这么傻啊）~~ 题目大意这里就不放了qwq，相信大家也能看懂quq 如果要买归类为附件的物品，必须先买该附件所属的主件。每个主件可以有0个、1个或2个附件。附件不再有从属于自己的附件。金明想买的东西很多，肯定会超过妈妈限定的N元。于是，他把每件物品规定了一个重要度，分为55等：用整数1-51−5表示，第55等最重要。他还从因特网上查到了每件物品的价格（都是10元的整数倍）。他希望在不超过N元（可以等于N元）的前提下，使每件物品的价格与重要度的乘积的总和最大。 这个题目我们可以考虑用分组背包做，因为每一组最多只有两个附件，那么我们分组背包里面的策略数也就有5种：选主件，主件+附件1，主件+附件2，主件+附件1+附件2，我们可以在预处理的时候把这几个状态都枚举出来 此外，因为状态很少，所以预处理的时候也可以判断每一个背包里面是不是都有两个附件，没有的话直接退出或者加它那一个附件就好了 附件所获得的价值用c[i]表示，需要花费w[i]的体力，这样我们可以在找附件的时候直接把它加上主件就好了，因为每个策略是互斥的，所以我们不用在意会不会选主件+附件会多加一遍主件 分组背包的原理就不讲了，请参考背包九讲qwq（逃 下面放上代码（代码里面也有部分注释qwq 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;using namespace std;int a[10001][6],f[100001],w[10001],c[10001],n,m,t;//不会链表QAQ，就只能用数组模拟存储 int main()&#123; scanf("%d%d",&amp;n,&amp;m); for(int i=1; i&lt;=m; i++) &#123; int k; scanf("%d%d%d",&amp;w[i],&amp;c[i],&amp;k); c[i]*=w[i];//直接把价值乘上 if(k!=0)//如果不是主件就加到它依附的主件序号后面 a[k][++a[k][0]]=i; else //是主件就加一组以他的序号为头的背包（千万不要图省空间qwq &#123; t+=i; a[i][++a[i][0]]=i; &#125; &#125; for(int i=1; i&lt;=t; i++) &#123; if(a[i][0]&gt;2)//如果他有俩附件 &#123; a[i][0]++;m++; w[m]+=w[a[i][1]]+w[a[i][2]]+w[a[i][3]]; w[a[i][2]]+=w[a[i][1]]; w[a[i][3]]+=w[a[i][1]]; c[m]+=c[a[i][1]]+c[a[i][2]]+c[a[i][3]]; c[a[i][2]]+=c[a[i][1]]; c[a[i][3]]+=c[a[i][1]]; a[i][a[i][0]]=m; continue; &#125; if(a[i][0]&lt;2) continue; //咋一个附件都没有呢，跳过！qwq if(a[i][0]==2) //正好有一个附件 &#123; w[a[i][2]]+=w[a[i][1]]; c[a[i][2]]+=c[a[i][1]]; continue; &#125; &#125; for(int k=1; k&lt;=t; k++) //标准的分组背包 for(int j=n; j&gt;=0; j--) for(int i=1; i&lt;=a[k][0]; i++) if(j&gt;=w[a[k][i]])//一定注意判断一下是否能装 f[j]=max(f[j],f[j-w[a[k][i]]]+c[a[k][i]]); printf("%d",f[n]); &#125;]]></content>
@@ -35,7 +46,7 @@
   </entry>
   <entry>
     <title><![CDATA[【题解】 luogu P1025 数的划分]]></title>
-    <url>%2F2018%2F10%2F31%2Findex%2F</url>
+    <url>%2F2018%2F10%2F31%2F%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91P1025%20%E6%95%B0%E7%9A%84%E5%88%92%E5%88%86%2F</url>
     <content type="text"><![CDATA[小蒟蒻好久没有写一篇搜索的题解了（明明可以DP的说，今天用DFS解决一下这道题目观察题意，我们可以发现题目中所求的组合总数的序列是一个单调不下降的序列，那么我们在DFS时设置参数就可以设置三个，分别是K1（保存还能用的数的个数），sum（当前记录的使用的数的和），num（当前序列选的数）在这里多讲一下num这个参数，因为选的数的序列是单调不下降的，所以我们选的数一定比前面大或者相同，因此我们可以用num保存当前选的数，这样就可以保证序列不会重，并且这也是个简单的优化。（虽然不如DP快，但是好想啊qwq，并且亲测DP空间比DFS要大一点（虽然时间快了N倍QAQ））上代码（代码中也有部分解释1234567891011121314151617181920212223242526272829303132#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;int ans=0,n,k;void dfs(int num,int sum,int k1)&#123; if(k1==0) &#123; if(sum==n) &#123; ans++; return; &#125; else return; &#125; for(int i=num; sum+i&lt;=n; i++)//sum+i&lt;=n是一个很简单的优化，防止溢出并减少循环次数（其实还有更好地优化就是其他大佬题解里的%%%） dfs(i,sum+i,k1-1);//（dfs深度优先一层层向下搜索就行了）&#125;int main()&#123; scanf("%d%d",&amp;n,&amp;k); if(k==1)&#123; printf("1"); return 0; &#125;//有一点小懒qwq，其实不用，因为n很小 dfs(1,0,k); printf("%d",ans);//输出方案总数&#125;]]></content>
       <categories>
         <category>搜索</category>
@@ -67,10 +78,5 @@
     <title><![CDATA[Hackjyの新家！]]></title>
     <url>%2F2018%2F10%2F27%2F%E6%96%B0%E5%AE%B6%2F</url>
     <content type="text"><![CDATA[今天hackjy搬家啦qwq，经过不懈的努力（其实还是靠了各路大佬和学长的帮忙）建好了自己的独立博客，原来的luogu博客也会时不时的更新，不过以后就主要在这里写文章啦，欢迎大家来拜访蒟蒻的博客啊qwq 原来博客的地址：hackjy的luogu博客!]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F10%2F27%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
 </search>
