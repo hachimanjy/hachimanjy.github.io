@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【题解】luogu P2210 Haywire]]></title>
+    <url>%2F2018%2F11%2F08%2F%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91-P2210-Haywire%2F</url>
+    <content type="text"><![CDATA[明天就NOIP了我还在这里学玄学算法真的是要死啊QAQ 算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，首先不会模拟退火的或者不会原理的请出门右转模拟退火原理+使用看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了剩下的注意的地方和一些做法就放在代码里了qwq 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;ctime&gt;#include&lt;cstdlib&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt;#define re register#define max(a,b) (a&gt;b?a:b)#define min(a,b) (a&lt;b?a:b)using namespace std;int n;int a[15][4];int p[100],p1[101],linshi,x,y,dc;const double starttem=1e9;const double endtime=0.999;const double changet=0.99;const double endtem=1e-14;//mnth四位大大 int abss(int x)&#123; return x&gt;0?x:x*-1;&#125;int sum() //求和 &#123; int ans=0; for(re int i=1; i&lt;=n; i++) for(re int j=1; j&lt;=3; j++) ans+=abss(p1[i]-p1[a[i][j]]); return ans;&#125;inline void change(int x,int y) //交换两个值&#123; int t=p1[x]; p1[x]=p1[y]; p1[y]=t;&#125;int srandom(int a,int b) //非酋的最后一搏&#123; return rand()%(b-a+1)+a;&#125; int main()&#123; srand(time(NULL)); srand(rand()+23333333); srand(rand()+19260817);//东方之力祝我成功 srand(rand());//玄学四连 scanf("%d",&amp;n); for(int i=1; i&lt;=n; i++) &#123; scanf("%d%d%d",&amp;a[i][1],&amp;a[i][2],&amp;a[i][3]); p[i]=i; //永远不变的初始位置 p1[i]=i;//变幻莫测的位置 &#125; dc=sum();//先求初始解 while((clock()/(1.0*CLOCKS_PER_SEC))&lt;=endtime) &#123; for(re int i=1; i&lt;=n; i++) p1[i]=p[i]; //先初始化好初值 for(re double t=starttem; t&gt;=endtem; t*=changet) &#123; linshi=dc; do &#123; x=srandom(1,n); y=srandom(1,n); &#125;while(x==y); //玩命找死 change(x,y); linshi=sum(); if(linshi&lt;=dc) dc=linshi; //看看是否比原先的更优 else if((exp(dc-linshi)*1.0/t&gt;(rand()*1.0/RAND_MAX))) change(x,y); //用一定的概率接受该解（毕竟有比你优的，但是你肯定要把不优的换回去啊qwq &#125; &#125; printf("%d",dc/2);//因为计算了两次，所以要除2，例如计算a-b你算a的时候计算了一次但你又在b时候又计算了所以必须除掉 &#125; 祝大家食用愉快qwq]]></content>
+      <categories>
+        <category>模拟退火</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[题解 P1757【通天之分组背包】]]></title>
     <url>%2F2018%2F11%2F07%2F%E9%A2%98%E8%A7%A3-P1757%E3%80%90%E9%80%9A%E5%A4%A9%E4%B9%8B%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85%E3%80%91%2F</url>
     <content type="text"><![CDATA[这是一道分组背包的裸板子题啊qwq，今天小蒟蒻来给大家讲一下分组背包的简单使用方法（毕竟难的也不会啊TAT（逃 首先看一下题目 题目背景直达通天路·小A历险记第二篇 题目描述自01背包问世之后，小A对此深感兴趣。一天，小A去远游，却发现他的背包不同于01背包，他的物品大致可分为k组，每组中的物品相互冲突，现在，他想知道最大的利用价值是多少。 输入输出格式输入格式：两个数m,n，表示一共有n件物品，总重量为m 接下来n行，每行3个数ai,bi,ci，表示物品的重量，利用价值，所属组数 输出格式：一个数，最大的利用价值 输入输出样例输入样例#1： 复制45 310 10 110 5 150 400 2输出样例#1： 复制10说明1&lt;=m&lt;=1000 1&lt;=n&lt;=1000 组数t&lt;=100 首先我们用一个数组w[i]来保存每个物品的重量，c[i]表示每个物品的价值，定义二维数组a[p][0]表示第p组的物品有a[p][0]件，里面存储这个物品的序号为[i]，定义一个变量t来保存一共有多少组物品。 那么这个题的状态转移方程就变得非常简单啦，大致类似于01背包，注意控制循环变量的时候把组数放在外面（或许只有本蒟蒻犯了这种zz的错误QAQ 下面状态转移方程和循环变量就在代码里啦qwq 1234567891011121314151617181920212223242526#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;int w[10001],t,c[10001],v,f[10001],a[10001][1001],m,n,p;int main()&#123; scanf("%d%d",&amp;m,&amp;n); for(int i=1; i&lt;=n; i++) &#123; scanf("%d%d%d",&amp;w[i],&amp;c[i],&amp;p); a[p][++a[p][0]]=i; t=max(t,p); &#125; for(int k=1; k&lt;=t; k++)//控制组数 for(int j=m; j&gt;=0; j--)//容量 for(int i=1; i&lt;=a[k][0]; i++)//枚举 if(w[a[k][i]]&lt;=j)//先判断能不能放 f[j]=max(f[j],f[j-w[a[k][i]]]+c[a[k][i]]); printf("%d",f[m]);&#125;]]></content>

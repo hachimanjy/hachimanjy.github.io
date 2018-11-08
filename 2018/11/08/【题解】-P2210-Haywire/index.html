@@ -121,13 +121,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hackjy&#39;s void heart">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="明天就NOIP了我还在这里学玄学算法真的是要死啊QAQ 算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，首先不会模拟退火的或者不会原理的请出门右转模拟退火原理+使用看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了剩下的注意的地方和一些做法就放在代码里了qwq 1234567891011121314">
+<meta name="keywords" content="学习笔记,题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【题解】luogu P2210 Haywire">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/【题解】-P2210-Haywire/index.html">
 <meta property="og:site_name" content="Hackjy&#39;s void heart">
+<meta property="og:description" content="明天就NOIP了我还在这里学玄学算法真的是要死啊QAQ 算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，首先不会模拟退火的或者不会原理的请出门右转模拟退火原理+使用看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了剩下的注意的地方和一些做法就放在代码里了qwq 1234567891011121314">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-08T04:56:03.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hackjy&#39;s void heart">
+<meta name="twitter:title" content="【题解】luogu P2210 Haywire">
+<meta name="twitter:description" content="明天就NOIP了我还在这里学玄学算法真的是要死啊QAQ 算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，首先不会模拟退火的或者不会原理的请出门右转模拟退火原理+使用看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了剩下的注意的地方和一些做法就放在代码里了qwq 1234567891011121314">
 
 
 
@@ -136,7 +141,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/08/【题解】-P2210-Haywire/">
 
 
 
@@ -146,7 +151,7 @@
   };
 </script>
 
-  <title>归档 | Hackjy's void heart</title>
+  <title>【题解】luogu P2210 Haywire | Hackjy's void heart</title>
   
 
 
@@ -196,7 +201,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/hachimanjy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -261,7 +266,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
@@ -281,25 +286,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -346,358 +332,212 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/【题解】-P2210-Haywire/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hackjy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hackjy's void heart">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">【题解】luogu P2210 Haywire
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-08 12:39:43 / 修改时间：12:56:03" itemprop="dateCreated datePublished" datetime="2018-11-08T12:39:43+08:00">2018-11-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 9 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/模拟退火/" itemprop="url" rel="index"><span itemprop="name">模拟退火</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/08/【题解】-P2210-Haywire/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/08/【题解】-P2210-Haywire/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/08/【题解】-P2210-Haywire/" itemprop="url">
-              
-                <span itemprop="name">【题解】luogu P2210 Haywire</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-08T12:39:43+08:00" content="2018-11-08">
-          11-08
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/07/题解-P1757【通天之分组背包】/" itemprop="url">
-              
-                <span itemprop="name">题解 P1757【通天之分组背包】</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-07T16:23:27+08:00" content="2018-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/07/【题解】-P1064-金明的预算方案/" itemprop="url">
-              
-                <span itemprop="name">【题解】 P1064 金明的预算方案</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-07T16:19:32+08:00" content="2018-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/07/【题解】-P1332-血色先锋队/" itemprop="url">
-              
-                <span itemprop="name">【题解】 P1332 血色先锋队</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-07T14:32:59+08:00" content="2018-11-07">
-          11-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/11/01/【学习笔记】 luogu-P1119-灾后重建/" itemprop="url">
-              
-                <span itemprop="name">【学习笔记】 luogu-P1119-灾后重建</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-11-01T10:42:22+08:00" content="2018-11-01">
-          11-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <p><del>明天就NOIP了我还在这里学玄学算法真的是要死啊QAQ</del></p>
+<h3 id="算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，"><a href="#算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，" class="headerlink" title="算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，"></a>算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，</h3><h3 id="首先不会模拟退火的或者不会原理的请出门右转模拟退火原理-使用"><a href="#首先不会模拟退火的或者不会原理的请出门右转模拟退火原理-使用" class="headerlink" title="首先不会模拟退火的或者不会原理的请出门右转模拟退火原理+使用"></a>首先不会模拟退火的或者不会原理的请出门右转<a href="https://m-sea.blog.luogu.org/qian-tan-SA" target="_blank" rel="noopener">模拟退火原理+使用</a></h3><h3 id="看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了"><a href="#看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了" class="headerlink" title="看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了"></a>看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了</h3><p>剩下的注意的地方和一些做法就放在代码里了qwq</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max(a,b) (a&gt;b?a:b)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(a,b) (a&lt;b?a:b)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">15</span>][<span class="number">4</span>];</span><br><span class="line"><span class="keyword">int</span> p[<span class="number">100</span>],p1[<span class="number">101</span>],linshi,x,y,dc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> starttem=<span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> endtime=<span class="number">0.999</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> changet=<span class="number">0.99</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> endtem=<span class="number">1e-14</span>;<span class="comment">//mnth四位大大 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">abss</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> 	<span class="keyword">return</span> x&gt;<span class="number">0</span>?x:x*<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">()</span> <span class="comment">//求和 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) </span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=<span class="number">3</span>; j++) </span><br><span class="line">			ans+=abss(p1[i]-p1[a[i][j]]);</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> <span class="comment">//交换两个值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t=p1[x];</span><br><span class="line">	p1[x]=p1[y];</span><br><span class="line">	p1[y]=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">srandom</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span> <span class="comment">//非酋的最后一搏</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> rand()%(b-a+<span class="number">1</span>)+a;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	srand(time(<span class="literal">NULL</span>));</span><br><span class="line">	srand(rand()+<span class="number">23333333</span>);</span><br><span class="line">	srand(rand()+<span class="number">19260817</span>);<span class="comment">//东方之力祝我成功</span></span><br><span class="line">	srand(rand());<span class="comment">//玄学四连 </span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a[i][<span class="number">1</span>],&amp;a[i][<span class="number">2</span>],&amp;a[i][<span class="number">3</span>]);</span><br><span class="line">		p[i]=i; <span class="comment">//永远不变的初始位置 </span></span><br><span class="line">		p1[i]=i;<span class="comment">//变幻莫测的位置 </span></span><br><span class="line">	&#125;</span><br><span class="line">	dc=sum();<span class="comment">//先求初始解 </span></span><br><span class="line">	<span class="keyword">while</span>((clock()/(<span class="number">1.0</span>*CLOCKS_PER_SEC))&lt;=endtime)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) p1[i]=p[i]; <span class="comment">//先初始化好初值</span></span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">double</span> t=starttem; t&gt;=endtem; t*=changet)</span><br><span class="line">		&#123;	</span><br><span class="line">			linshi=dc;</span><br><span class="line">			<span class="keyword">do</span></span><br><span class="line">			&#123;</span><br><span class="line">				x=srandom(<span class="number">1</span>,n);</span><br><span class="line">				y=srandom(<span class="number">1</span>,n);</span><br><span class="line">			&#125;<span class="keyword">while</span>(x==y); <span class="comment">//玩命找死 </span></span><br><span class="line">			change(x,y);</span><br><span class="line">			linshi=sum();</span><br><span class="line">			<span class="keyword">if</span>(linshi&lt;=dc) dc=linshi; <span class="comment">//看看是否比原先的更优 </span></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>((<span class="built_in">exp</span>(dc-linshi)*<span class="number">1.0</span>/t&gt;(rand()*<span class="number">1.0</span>/RAND_MAX))) change(x,y); <span class="comment">//用一定的概率接受该解（毕竟有比你优的，但是你肯定要把不优的换回去啊qwq </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,dc/<span class="number">2</span>);<span class="comment">//因为计算了两次，所以要除2，例如计算a-b你算a的时候计算了一次但你又在b时候又计算了所以必须除掉 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="祝大家食用愉快qwq"><a href="#祝大家食用愉快qwq" class="headerlink" title="祝大家食用愉快qwq"></a>祝大家食用愉快qwq</h3>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-题解" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/31/【题解】P1025 数的划分/" itemprop="url">
-              
-                <span itemprop="name">【题解】 luogu P1025 数的划分</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-31T19:09:29+08:00" content="2018-10-31">
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/31/【题解】luogu-P2872-USACO07DEC-道路建设Building-Roads/" itemprop="url">
-              
-                <span itemprop="name">【题解】luogu-P2872-USACO07DEC-道路建设Building-Roads</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-31T18:27:30+08:00" content="2018-10-31">
-          10-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/30/page【颓废向】（机房dalao们的日常）/" itemprop="url">
-              
-                <span itemprop="name">【颓废向】(长期置顶)(不定期更新)机房dalao们的日常</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-30T16:27:20+08:00" content="2018-10-30">
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/27/新家/" itemprop="url">
-              
-                <span itemprop="name">Hackjyの新家！</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-27T19:09:45+08:00" content="2018-10-27">
-          10-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+          
+            <a href="/tags/题解/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/07/题解-P1757【通天之分组背包】/" rel="next" title="题解 P1757【通天之分组背包】">
+                <i class="fa fa-chevron-left"></i> 题解 P1757【通天之分组背包】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -718,8 +558,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -841,6 +690,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，"><span class="nav-number">1.</span> <span class="nav-text">算了还是贴上一篇题解吧qwq，毕竟是人生中第一篇黑题题解qwq，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#首先不会模拟退火的或者不会原理的请出门右转模拟退火原理-使用"><span class="nav-number">2.</span> <span class="nav-text">首先不会模拟退火的或者不会原理的请出门右转模拟退火原理+使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了"><span class="nav-number">3.</span> <span class="nav-text">看一下题目，可以发现这个题就是让我们在所有的组合中找出一个最优解来，符合我们模拟退火的使用条件，所以我们可以开始考虑如何确定每一个值了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#祝大家食用愉快qwq"><span class="nav-number">4.</span> <span class="nav-text">祝大家食用愉快qwq</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -973,6 +838,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 
@@ -987,6 +856,23 @@
     <script id="dsq-count-scr" src="https://hackjy.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/11/08/【题解】-P2210-Haywire/';
+        this.page.identifier = '2018/11/08/【题解】-P2210-Haywire/';
+        this.page.title = '【题解】luogu P2210 Haywire';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hackjy.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
